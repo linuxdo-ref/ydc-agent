@@ -1,0 +1,26 @@
+{
+  "name": "ydc-api-services",
+  "version": "1.0.0",
+  "description": "OpenAI-compatible API on Cloudflare Workers",
+  "scripts": {
+    "deploy": "wrangler d1 migrations apply ydc_db --remote && wrangler deploy"
+  },
+  "bindings": {
+    "d1_databases": {
+      "ydc_db": {
+        "description": "D1 database for conversation storage"
+      }
+    },
+    "vars": {
+      "YDC_API_KEYS": {
+        "description": "You.com API key(s), comma-separated for multiple keys"
+      },
+      "ACCESS_TOKEN": {
+        "description": "Optional: Access token for API authentication"
+      },
+      "CUSTOM_AGENTS": {
+        "description": "Optional: Custom agents (format: name:id,name2:id2)"
+      }
+    }
+  }
+}

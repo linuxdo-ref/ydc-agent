@@ -1,0 +1,73 @@
+{
+  "name": "ydc-agent",
+  "version": "1.0.11",
+  "description": "MCP server for You.com Agents API - Express, Research, Advanced agents with multi-turn conversations, streaming, OpenAI and Anthropic/Claude API compatibility",
+  "type": "module",
+  "main": "index.js",
+  "bin": {
+    "ydc-agent": "./index.js"
+  },
+  "files": [
+    "index.js",
+    "openai-server.js",
+    "lib/",
+    "README.md",
+    "README_ZH_TW.md",
+    "README_ZH_CN.md",
+    "README_JA.md"
+  ],
+  "scripts": {
+    "start": "node index.js",
+    "start:openai": "node openai-server.js",
+    "test": "node tests/test.js",
+    "test:api": "node tests/test-api.js",
+    "test:streaming": "node tests/test-streaming.js",
+    "test:mcp": "node tests/test-mcp-tools.js",
+    "load-test": "node tools/load-test.js",
+    "prepublishOnly": "echo 'Ready to publish'",
+    "cf:deploy": "wrangler deploy",
+    "cf:dev": "wrangler dev",
+    "cf:db:create": "wrangler d1 create ydc-conversations",
+    "cf:db:init": "wrangler d1 execute ydc-conversations --file=cloudflare/schema.sql"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.25.1",
+    "sql.js": "^1.11.0"
+  },
+  "optionalDependencies": {
+    "chalk": "^5.6.2",
+    "cli-progress": "^3.12.0",
+    "cli-table3": "^0.6.5",
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "mcp",
+    "you.com",
+    "ydc",
+    "agents",
+    "ai",
+    "research",
+    "advanced",
+    "streaming",
+    "openai",
+    "chat",
+    "conversation"
+  ],
+  "author": "linuxdo-ref",
+  "license": "MIT",
+  "homepage": "https://github.com/linuxdo-ref/ydc-agent",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/linuxdo-ref/ydc-agent.git"
+  },
+  "bugs": {
+    "url": "https://github.com/linuxdo-ref/ydc-agent/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

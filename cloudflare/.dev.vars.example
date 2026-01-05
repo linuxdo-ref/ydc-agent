@@ -1,0 +1,8 @@
+# You.com API key(s), comma-separated for multiple
+YDC_API_KEYS=your-api-key-here
+
+# Optional: Access token for API authentication
+ACCESS_TOKEN=
+
+# Optional: Custom agents (format: name:id,name2:id2)
+CUSTOM_AGENTS=
